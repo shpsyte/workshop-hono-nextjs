@@ -6,20 +6,42 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:generate": "drizzle-kit generate:pg --schema db/schema.ts --out ./drizzle",
+    "db:migrate": "tsx ./migrate.ts"
   },
   "dependencies": {
+    "@auth/core": "^0.28.2",
+    "@auth/drizzle-adapter": "^0.8.2",
+    "@hono/auth-js": "^1.0.3",
+    "@libsql/client": "^0.6.0",
+    "@radix-ui/react-slot": "^1.0.2",
     "@types/node": "20.12.5",
     "@types/react": "18.2.74",
     "@types/react-dom": "18.2.24",
+    "@typescript-eslint/eslint-plugin": "^7.5.0",
+    "@typescript-eslint/parser": "^7.5.0",
+    "@vercel/postgres": "^0.8.0",
     "autoprefixer": "10.4.19",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.29.5",
     "eslint": "8.57.0",
     "eslint-config-next": "14.1.4",
-    "next": "14.1.4",
+    "hono": "^4.2.2",
+    "lucide-react": "^0.365.0",
+    "next": "^14.0.4",
     "postcss": "8.4.38",
+    "postgres": "^3.4.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "tailwind-merge": "^2.2.2",
     "tailwindcss": "3.4.3",
+    "tailwindcss-animate": "^1.0.7",
     "typescript": "5.4.4"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.20.14"
   }
 }
