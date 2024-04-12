@@ -1,0 +1,27 @@
+{
+  "version": "5",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1712889913041,
+      "tag": "0000_colossal_silverclaw",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1712890564158,
+      "tag": "0001_soft_zombie",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1712890615471,
+      "tag": "0002_reflective_dazzler",
+      "breakpoints": true
+    }
+  ]
+}

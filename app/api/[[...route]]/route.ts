@@ -1,7 +1,7 @@
 import { Context, Hono } from "hono";
 import { handle } from "hono/vercel";
 import GitHub from "@auth/core/providers/github";
-// import { DrizzleAdapter } from "@auth/drizzle-adapter";
+import { DrizzleAdapter } from "@auth/drizzle-adapter";
 
 import {
   AuthConfig,
@@ -10,7 +10,7 @@ import {
   verifyAuth,
 } from "@hono/auth-js";
 import todos from "./todos";
-// import { db } from "@/db/drizzle";
+import { db } from "@/db/drizzle";
 export const runtime = "edge";
 
 const app = new Hono().basePath("/api");
@@ -27,7 +27,7 @@ app.route("/todos", todos);
 
 function getAuthConfig(c: Context): AuthConfig {
   return {
-    // adapter: DrizzleAdapter(db),
+    adapter: DrizzleAdapter(db),
     secret: process.env.AUTH_SECRET,
     providers: [
       GitHub({
