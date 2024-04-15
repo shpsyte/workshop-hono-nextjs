@@ -1,10 +1,11 @@
 "use client";
-
+import { Button } from "@/components/ui/button";
 import { useSession } from "@/hooks/use-session";
 import { Loader2 } from "lucide-react";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 
-export default function Home() {
+const SignInPage = () => {
   const { status, session } = useSession();
 
   if (status === "pending") {
@@ -15,9 +16,18 @@ export default function Home() {
     );
   }
 
-  if (!session) {
-    redirect("/api/auth/signin");
+  if (session) {
+    redirect("/");
   }
 
-  return <h1>Only auth uiser can see that</h1>;
-}
+  return (
+    <div>
+      <p>Sign in</p>
+      <Link href="/api/auth/signin">
+        <Button>Sign in</Button>
+      </Link>
+    </div>
+  );
+};
+
+export default SignInPage;
