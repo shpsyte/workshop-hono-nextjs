@@ -5,6 +5,8 @@ import {
   text,
 } from "drizzle-orm/sqlite-core";
 import type { AdapterAccount } from "@auth/core/adapters";
+import { relations } from "drizzle-orm";
+import { timestamp } from "drizzle-orm/mysql-core";
 
 export const users = sqliteTable("user", {
   id: text("id").notNull().primaryKey(),
@@ -58,7 +60,21 @@ export const verificationTokens = sqliteTable(
   }),
 );
 
-export const usersTest = sqliteTable("usersTest", {
-  id: integer("id"),
-  name: text("name").notNull(),
+export const quotes = sqliteTable("quotes", {
+  id: text("id").notNull().primaryKey(),
+  text: text("text").notNull(),
+  userId: text("userId").notNull(),
+  createdAt: integer("createdAt", { mode: "timestamp_ms" })
+    .notNull()
+    .defaultNow(),
 });
+
+export const usersRelations = relations(users, ({ many }) => ({
+  quotes: many(quotes),
+}));
+export const quotesRelations = relations(quotes, ({ one }) => ({
+  user: one(users, {
+    fields: [quotes.userId],
+    references: [users.id],
+  }),
+}));

@@ -22,6 +22,34 @@
       "when": 1712890615471,
       "tag": "0002_reflective_dazzler",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1713221846545,
+      "tag": "0003_brief_bishop",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1713221890633,
+      "tag": "0004_woozy_beyonder",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1713221986065,
+      "tag": "0005_lonely_deathstrike",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1713222173232,
+      "tag": "0006_slimy_iron_patriot",
+      "breakpoints": true
     }
   ]
 }

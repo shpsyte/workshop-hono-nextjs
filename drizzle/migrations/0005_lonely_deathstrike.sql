@@ -1,0 +1,1 @@
+ALTER TABLE `quotes` RENAME COLUMN `userId` TO `ownerId`;
